@@ -1,0 +1,15 @@
+{
+  "name": "intellicards",
+  "version": "1.0.0",
+  "description": "cards for studying better",
+  "default": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "fabrizio torrico",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.2"
+  }
+}

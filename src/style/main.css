@@ -1,0 +1,325 @@
+/* -------------------------------- */
+/*           Basic Setup            */
+/* -------------------------------- */
+:root {
+  /* --clr-prim: #5ec576; */
+  --clr-prim: #2a9d8f;
+  /* --clr-sec: #ffcb03; */
+  --clr-sec: #e9c46a;
+  /* --clr-ter: #ff585f; */
+  --clr-ter: #e76f51;
+  /* --clr-prim-darker: #4bbb7d; */
+  --clr-prim-darker: #264653;
+  /* --clr-sec-darker: #ffbb00; */
+  --clr-sec-darker: #f4a261;
+  /* --clr-ter-darker: #fd424b; */
+  --clr-ter-darker: #bf5c43;
+  --clr-prim-opacity: #5ec5763a;
+  --clr-sec-opacity: #ffcd0331;
+  --clr-ter-opacity: #ff58602d;
+  --gradient-prim: linear-gradient(to top left, #39b385, #264653);
+  --gradient-sec: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+/* var(--color-primary); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  color: #555;
+  font-family: 'Lato', 'Arial', 'Helvetica';
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  /* pa que no se pase */
+  overflow-x: hidden;
+}
+.clearfix {
+  zoom: 1;
+}
+/* no es necesario entenderlo, es para limpiar el float de los elementos */
+.clearfix:after {
+  content: '.';
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* -------------------------------- */
+/*        Reusable components       */
+/* -------------------------------- */
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.row {
+  max-width: 1140px;
+  /* margin: 0 auto 0 auto; */
+  margin: 0 auto;
+}
+.row-small {
+  max-width: 600px;
+  /* margin: 0 auto 0 auto; */
+  margin: 0 auto;
+}
+section {
+  padding: 80px 0;
+}
+.box {
+  padding: 1%;
+}
+.progress {
+  width: 300px;
+  height: 10px;
+
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.track {
+  background-color: var(--clr-ter-opacity);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lack {
+  background-color: var(--clr-sec-opacity);
+  top: 35%;
+  transform: translateY(-50%);
+}
+
+.progress__fill-track {
+  background-color: var(--clr-ter);
+  width: 40%;
+  height: 100%;
+}
+.progress__fill-lack {
+  background-color: var(--clr-sec);
+  width: 20%;
+  height: 100%;
+}
+
+/* -------------------------------- */
+/*           Paragraphs             */
+/* -------------------------------- */
+.long-copy {
+  line-height: 145%;
+  width: 70%;
+  margin-left: 15%;
+  /* porque 15 en margin? lo que queda va a la derecha y a la izquierda */
+}
+.box p {
+  font-size: 90%;
+  line-height: 145%;
+}
+/* -------------------------------- */
+/*             Header             */
+/* -------------------------------- */
+.section-type {
+  font-size: 90%;
+  font-weight: 500;
+  float: right;
+  color: white;
+  margin-top: 8px;
+  margin-right: 30px;
+}
+.section-days {
+  font-size: 90%;
+  font-weight: 500;
+  float: left;
+  color: white;
+  margin-top: 8px;
+  margin-left: 30px;
+}
+.main-nav {
+  background-color: var(--clr-prim-darker);
+  height: 10vh;
+  list-style: none;
+  position: fixed;
+  width: 100%;
+  padding-top: 10px;
+}
+.main-nav li {
+  padding-left: 15px;
+  text-align: center;
+  /* color: transparent; */
+  float: left;
+  width: 20%;
+  transition: height 0.2s;
+  list-style: none;
+}
+.main-nav li a:link,
+.main-nav li a:visited {
+  color: #ccc;
+  text-decoration: none;
+
+  /* text-transform: uppercase; */
+  /* transparent: not be visible until hover */
+  transition: font-size 0.2s;
+}
+.main-nav li a:hover,
+.main-nav li a:active,
+#section-active a {
+  font-size: 120%;
+  color: #fff;
+}
+/* .main-nav li p {
+  font-size: 80%;
+  font-weight: 400;
+  padding-left: 10px;
+  position: absolute;
+  color: var(--clr-prim-darker);
+} */
+.circle:hover,
+#section-active .circle {
+  height: 60px;
+}
+.circle {
+  padding-left: 8px;
+  background-color: var(--clr-prim-darker);
+  height: 10px;
+  width: 90px;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+/* -------------------------------- */
+/*               Icons              */
+/* -------------------------------- */
+.icon-big {
+  font-size: 350%;
+  display: block;
+  color: white;
+  /* text-align: center; */
+}
+
+.icon-small {
+  display: inline-block;
+  /* width: 30px; */
+  text-align: center;
+  /* color: #ccc; */ /* var(--clr-prim); */
+  font-size: 190%;
+  margin-right: 10px;
+}
+
+/* -------------------------------- */
+/*               decks              */
+/* -------------------------------- */
+.section-decks {
+  background: var(--gradient-prim);
+  background-size: cover;
+  background-position: center;
+  /* 100 porciento del view port */
+  height: 100vh;
+  background-attachment: fixed;
+  /* con esto la imagen queda clavada */
+}
+.deck {
+  margin-top: 30px;
+  height: 100px;
+  width: 70%;
+  background-color: #2a9d8f;
+  border-radius: 30px;
+  padding-left: 60px;
+  color: white;
+}
+
+.deck i,
+.deck-text {
+  float: left;
+}
+.deck i {
+  z-index: 0;
+  position: relative;
+  top: 15px;
+  margin-right: 30px;
+  font-size: 300%;
+  color: var(--clr-prim-darker);
+}
+.deck-text {
+  padding-top: 25px;
+  color: white;
+  margin-right: 30px;
+}
+.deck-active {
+  border-radius: 30px 30px 0px 0px;
+}
+/* -------------------------------- */
+/*               cards              */
+/* -------------------------------- */
+.cards {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0px 0px 30px 30px;
+  background-color: var(--clr-prim-darker);
+  width: 70%;
+  list-style: none;
+}
+.card {
+  font-weight: 500;
+  color: white;
+  padding-left: 5.5%;
+  height: 100px;
+  background-color: var(--clr-prim-darker);
+  width: 25%;
+  float: left;
+
+  border: 1px solid var(--clr-prim);
+  /*  border-style: solid;
+  border-width: 2px;
+  border-color: var(--clr-prim); */
+}
+.corner-left {
+  border-bottom-left-radius: 30px;
+}
+.corner-right {
+  border-bottom-right-radius: 30px;
+}
+.card p {
+  padding-left: 3%;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+}
+.card i {
+  z-index: -2;
+  color: var(--clr-prim);
+  font-size: 80px;
+  transform: rotate(-45deg);
+  transition: transform 0.2s;
+}
+.card:hover i {
+  position: absolute;
+  top: -6px;
+  z-index: 0;
+  font-size: 100px;
+  transform: rotate(0deg);
+  padding-bottom: 10px;
+}
+/* -------------------------------- */
+/*           add cards              */
+/* -------------------------------- */
+.add-card-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50rem;
+  background-color: #fff;
+  border-radius: 4.5px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 2rem 3rem rgb(0 0 0 / 25%);
+  z-index: 1000;
+  transition: all 0.5s;
+}
+.upload__heading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.upload input {
+  display: right;
+}

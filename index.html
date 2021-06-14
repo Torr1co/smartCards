@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- vendors -->
+    <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="vendors/css/grid.css" />
+
+    <!-- mine -->
+    <link rel="stylesheet" type="text/css" href="src/style/main.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="src/css/queries.css" /> -->
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendors/css/ionicons.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="vendors/css/animate.css" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IntelliCards</title>
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav">
+        <p class="section-days">dias activos: 5</p>
+        <div class="row-small">
+          <ul>
+            <li id="section-active">
+              <div class="circle">
+                <a href="#">
+                  <i class="ion-ios-bookmarks icon-small"></i>
+                </a>
+              </div>
+            </li>
+
+            <li>
+              <div class="circle">
+                <a href="#">
+                  <i class="ion-ios-people icon-small"></i>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="circle">
+                <a href="#">
+                  <i class="ion-ios-home icon-small"></i>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="circle">
+                <a href="#">
+                  <i class="ion-ios-analytics icon-small"></i>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="circle">
+                <a href="#">
+                  <i class="ion-ios-contact icon-small"></i>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <p class="section-type">aprender</p>
+      </nav>
+    </header>
+
+    <section class="section-decks">
+      <div class="row">
+        <ul>
+          <li>
+            <div>
+              <div class="deck deck-active">
+                <i class="ion-ios-folder icon-small"></i>
+                <div class="deck-text">
+                  <h4>Historia</h4>
+                  <p>some info about deck 1</p>
+                </div>
+                <div class="progress lack">
+                  <div class="progress__fill-lack"></div>
+                  <span class="progress__text"></span>
+                </div>
+                <div class="progress track">
+                  <div class="progress__fill-track"></div>
+                  <span class="progress__text"></span>
+                  <p>30</p>
+                </div>
+              </div>
+
+              <ul class="cards">
+                <li class="card corner-left">
+                  <i class="ion-ios-bookmarks icon-small"></i>
+                  <p>Card1</p>
+                </li>
+                <li class="card">
+                  <i class="ion-ios-bookmarks icon-small"></i>
+                  <p>Card2</p>
+                </li>
+                <li class="card">
+                  <i class="ion-ios-close icon-small"></i>
+                  <p>Card3</p>
+                </li>
+                <li class="card corner-right">
+                  <i class="ion-ios-bookmarks icon-small"></i>
+                  <p>Card4</p>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li>
+            <div class="deck">
+              <i class="ion-ios-folder icon-small icon-decks"></i>
+              <div class="deck-text">
+                <h4>Matematica</h4>
+                <p>some info about deck 2</p>
+              </div>
+              <div class="progress lack">
+                <div class="progress__fill-lack"></div>
+                <span class="progress__text"></span>
+              </div>
+              <div class="progress track">
+                <div class="progress__fill-track"></div>
+                <span class="progress__text"></span>
+                <p>30</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="add-card-window hidden">
+      <button class="btn--close-modal"></button>
+      <form class="upload">
+        <h3 class="upload__heading">completar cartica</h3>
+        <label>front: </label>
+        <input value="front" required type="text" name="front" />
+        <label>front: </label>
+        <input value="front" required type="text" name="front" />
+        <label>front: </label>
+        <input value="front" required type="text" name="front" />
+        <label>front: </label>
+        <input value="front" required type="text" name="front" />
+      </form>
+    </div>
+  </body>
+</html>
