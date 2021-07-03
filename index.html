@@ -69,6 +69,7 @@
       </nav>
     </header>
 
+    <!-- DECKS -->
     <section class="section-decks">
       <div class="row">
         <ul>
@@ -133,18 +134,54 @@
         </ul>
       </div>
     </section>
+
+    <!-- AÑADIR CARTA  -->
+    <div class="overlay hidden"></div>
     <div class="add-card-window hidden">
       <button class="btn--close-modal"></button>
       <form class="upload">
-        <h3 class="upload__heading">completar cartica</h3>
-        <label>front: </label>
+        <h3>Carta</h3>
+        <label>Front </label>
+        <input
+          value="titulo de la carta..."
+          required
+          type="text"
+          name="front"
+        />
+        <label>Back </label>
+        <input
+          value="Informacion a recordar.."
+          required
+          type="text"
+          name="back"
+        />
+        <label>Customization </label>
+        <input
+          autocomplete="off"
+          id="input_custom"
+          required
+          placeholder="mazo"
+          list="mazos"
+        />
+        <datalist id="mazos">
+          <option value="cadp"></option>
+          <option value="oc"></option>
+          <option value="matematica"></option>
+        </datalist>
+
+        <input id="input_custom_right" placeholder="tema" list="tema" />
+        <datalist id="tema">
+          <option value="azul"></option>
+          <option value="rojo"></option>
+          <option value="verde"></option>
+        </datalist>
+
+        <input type="submit" value="Confirm" id="input_submit" />
+        <input type="cancel" value="Cancel" id="input_cancel" />
+        <!--       <label>front: </label>
         <input value="front" required type="text" name="front" />
         <label>front: </label>
-        <input value="front" required type="text" name="front" />
-        <label>front: </label>
-        <input value="front" required type="text" name="front" />
-        <label>front: </label>
-        <input value="front" required type="text" name="front" />
+        <input value="front" required type="text" name="front" /> -->
       </form>
     </div>
   </body>
