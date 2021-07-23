@@ -29,6 +29,7 @@
 }
 html,
 body {
+  background: var(--gradient-prim);
   color: #555;
   font-family: 'Lato', 'Arial', 'Helvetica';
   font-size: 20px;
@@ -36,6 +37,9 @@ body {
   text-rendering: optimizeLegibility;
   /* pa que no se pase */
   overflow-x: hidden;
+}
+ul {
+  list-style: none;
 }
 .clearfix {
   zoom: 1;
@@ -52,6 +56,28 @@ body {
 /* -------------------------------- */
 /*        Reusable components       */
 /* -------------------------------- */
+
+/* SPINNER */
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+}
+svg {
+  height: 6rem;
+  width: 6rem;
+  fill: var(--clr-prim);
+  animation: rotate 2s infinite linear;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .hidden {
   visibility: hidden;
   opacity: 0;
@@ -209,7 +235,6 @@ section {
 /*               decks              */
 /* -------------------------------- */
 .section-decks {
-  background: var(--gradient-prim);
   background-size: cover;
   background-position: center;
   /* 100 porciento del view port */
@@ -245,17 +270,20 @@ section {
   margin-right: 30px;
 }
 .deck-active {
+  margin-bottom: 130px;
   border-radius: 30px 30px 0px 0px;
 }
 /* -------------------------------- */
 /*               cards              */
 /* -------------------------------- */
 .cards {
+  margin-top: 80px;
+  margin-left: -60px;
   position: relative;
   overflow: hidden;
   border-radius: 0px 0px 30px 30px;
   background-color: var(--clr-prim-darker);
-  width: 70%;
+  width: calc(100% + 60px);
   list-style: none;
 }
 .card {
@@ -266,7 +294,7 @@ section {
   background-color: var(--clr-prim-darker);
   width: 25%;
   float: left;
-
+  cursor: pointer;
   border: 1px solid var(--clr-prim);
   /*  border-style: solid;
   border-width: 2px;
@@ -285,11 +313,11 @@ section {
   transform: translateY(-50%);
 }
 .card i {
-  z-index: -2;
+  position: inherit;
   color: var(--clr-prim);
   font-size: 80px;
   transform: rotate(-45deg);
-  transition: transform 0.2s;
+  transition: transform 0.4s;
 }
 .card:hover i {
   position: absolute;
@@ -302,6 +330,25 @@ section {
 /* -------------------------------- */
 /*           add cards              */
 /* -------------------------------- */
+.btn--add-card {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  font-size: xx-large;
+  background-color: white;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+.btn--add-card i {
+  position: fixed;
+  bottom: 55px;
+  right: 55px;
+}
+.btn--add-card i:hover {
+  font-size: 200%;
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -364,4 +411,42 @@ section {
   color: white;
   text-align: center;
   border-radius: 50px;
+}
+
+/* PRACTICE */
+.section-practice {
+  padding: 0;
+}
+.practice-options {
+  background-color: white;
+  position: fixed;
+  height: 10vh;
+  width: 100%;
+  z-index: 9;
+  bottom: 30px;
+}
+.practice-options p {
+  float: left;
+  width: 20%;
+  height: 10vh;
+  text-align: center;
+  padding-top: 3vh;
+}
+.practice-options p {
+  color: #1b655c;
+  font-weight: 500;
+}
+#option-bad {
+  background-color: #e76f51;
+}
+#option-normal {
+  background-color: #868686;
+}
+#option-good {
+  background-color: #177c70;
+}
+#option-bad,
+#option-good,
+#option-normal {
+  color: white;
 }

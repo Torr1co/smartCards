@@ -19,10 +19,12 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="src/js/controller.js"></script>
     <title>IntelliCards</title>
   </head>
   <body>
-    <header>
+    <!-- NAVEGADOR -->
+    <header class="">
       <nav class="main-nav">
         <p class="section-days">dias activos: 5</p>
         <div class="row-small">
@@ -70,72 +72,115 @@
     </header>
 
     <!-- DECKS -->
-    <section class="section-decks">
-      <div class="row">
-        <ul>
-          <li>
-            <div>
-              <div class="deck deck-active">
-                <i class="ion-ios-folder icon-small"></i>
-                <div class="deck-text">
-                  <h4>Historia</h4>
-                  <p>some info about deck 1</p>
-                </div>
-                <div class="progress lack">
-                  <div class="progress__fill-lack"></div>
-                  <span class="progress__text"></span>
-                </div>
-                <div class="progress track">
-                  <div class="progress__fill-track"></div>
-                  <span class="progress__text"></span>
-                  <p>30</p>
-                </div>
-              </div>
+    <section class="section-decks row">
+      <ul class="results">
+        <!-- <li class="deck deck-active">
+          <i class="ion-ios-folder icon-small"></i>
+          <div class="deck-text">
+            <h4>Historia</h4>
+            <p>some info about deck 1</p>
+          </div>
+          <div class="progress lack">
+            <div class="progress__fill-lack"></div>
+            <span class="progress__text"></span>
+          </div>
+          <div class="progress track">
+            <div class="progress__fill-track"></div>
+            <span class="progress__text"></span>
+            <p>30</p>
+          </div>
 
-              <ul class="cards">
-                <li class="card corner-left">
-                  <i class="ion-ios-bookmarks icon-small"></i>
-                  <p>Card1</p>
-                </li>
-                <li class="card">
-                  <i class="ion-ios-bookmarks icon-small"></i>
-                  <p>Card2</p>
-                </li>
-                <li class="card">
-                  <i class="ion-ios-close icon-small"></i>
-                  <p>Card3</p>
-                </li>
-                <li class="card corner-right">
-                  <i class="ion-ios-bookmarks icon-small"></i>
-                  <p>Card4</p>
-                </li>
-              </ul>
-            </div>
-          </li>
+          <ul class="cards">
+            <li class="card corner-left">
+              <i class="ion-ios-bookmarks icon-small"></i>
+              <p>Card1</p>
+            </li>
+            <li class="card">
+              <i class="ion-ios-bookmarks icon-small"></i>
+              <p>Card2</p>
+            </li>
+            <li class="card">
+              <i class="ion-ios-close icon-small"></i>
+              <p>Card3</p>
+            </li>
+            <li class="card corner-right">
+              <i class="ion-ios-bookmarks icon-small"></i>
+              <p>Card4</p>
+            </li>
+          </ul>
+        </li>
 
-          <li>
-            <div class="deck">
-              <i class="ion-ios-folder icon-small icon-decks"></i>
-              <div class="deck-text">
-                <h4>Matematica</h4>
-                <p>some info about deck 2</p>
-              </div>
-              <div class="progress lack">
-                <div class="progress__fill-lack"></div>
-                <span class="progress__text"></span>
-              </div>
-              <div class="progress track">
-                <div class="progress__fill-track"></div>
-                <span class="progress__text"></span>
-                <p>30</p>
-              </div>
-            </div>
-          </li>
-        </ul>
+        <li class="deck">
+          <i class="ion-ios-folder icon-small icon-decks"></i>
+          <div class="deck-text">
+            <h4>Matematica</h4>
+            <p>some info about deck 2</p>
+          </div>
+          <div class="progress lack">
+            <div class="progress__fill-lack"></div>
+            <span class="progress__text"></span>
+          </div>
+          <div class="progress track">
+            <div class="progress__fill-track"></div>
+            <span class="progress__text"></span>
+            <p>30</p>
+          </div>
+        </li>
+        <li class="deck deck-active">
+          <i class="ion-ios-folder icon-small"></i>
+          <div class="deck-text">
+            <h4>Historia</h4>
+            <p>some info about deck 1</p>
+          </div>
+          <div class="progress lack">
+            <div class="progress__fill-lack"></div>
+            <span class="progress__text"></span>
+          </div>
+          <div class="progress track">
+            <div class="progress__fill-track"></div>
+            <span class="progress__text"></span>
+            <p>30</p>
+          </div>
+
+          <ul class="cards">
+            <li class="card corner-left">
+              <i class="ion-ios-bookmarks icon-small"></i>
+              <p>Card1</p>
+            </li>
+            <li class="card">
+              <i class="ion-ios-bookmarks icon-small"></i>
+              <p>Card2</p>
+            </li>
+            <li class="card">
+              <i class="ion-ios-close icon-small"></i>
+              <p>Card3</p>
+            </li>
+            <li class="card corner-right">
+              <i class="ion-ios-bookmarks icon-small"></i>
+              <p>Card4</p>
+            </li>
+          </ul>
+        </li> -->
+      </ul>
+    </section>
+
+    <!-- SECCION DE PRACTICA -->
+    <section class="section-practice hidden">
+      <div class="practice-options">
+        <p>Matematica</p>
+        <p id="option-bad">Mal</p>
+        <p id="option-normal">Normal</p>
+        <p id="option-good">Bien</p>
+        <p>35%</p>
       </div>
     </section>
 
     <!-- AÑADIR CARTA  -->
+    <span class="btn--add-card">
+      <i class="ion-ios-plus icon-small"></i>
+    </span>
+
+    <!-- FORM -->
     <div class="overlay hidden"></div>
     <div class="add-card-window hidden">
       <button class="btn--close-modal"></button>
