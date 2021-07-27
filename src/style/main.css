@@ -339,6 +339,25 @@ section {
 .deck ul {
   width: 100%;
 }
+.deck__play {
+  padding: 0;
+  margin: 0;
+  font-size: xx-large;
+  background-color: white;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  color: var(--clr-prim);
+}
+.deck__play i {
+  bottom: 55px;
+  right: 55px;
+  transition: transform 0.2s;
+}
+.deck__play i:hover {
+  transform: scale(1.25, 1.25);
+}
 
 /* -------------------------------- */
 /*               cards              */

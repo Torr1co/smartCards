@@ -3,6 +3,8 @@ export const state = {
     {
       name: 'cadp',
       description: 'some info about deck 1',
+      progressDeck: 0,
+      progressDay: 0,
       cards: [
         {
           front: 'card1',
@@ -51,17 +53,28 @@ export const state = {
   ], */
   /*[deck[card, card], deck2[card, card-2]] */
 };
-const uploadDeck = function (newCard) {
+const addDeck = function (newCard) {
   state.decks.push({
     name: newCard.deck,
     description: `some info about deck ${newCard.deck}`,
+    progress: 0,
     cards: [],
   });
-  uploadCard(newCard);
+  addCard(newCard);
 };
 
-export const uploadCard = function (newCard) {
-  const findDeck = state.decks.find(deck => deck.name === newCard.deck);
-  findDeck?.cards.push(newCard) ?? uploadDeck(newCard);
+//pone la data en el localStorage
+const initDecks = function () {
+  const storage = localStorage.getItem('decks');
+  if (storage) state.decks = JSON.parse(storage);
 };
+initDecks();
+
+export const addCard = function (newCard) {
+  const findDeck = state.decks.find(deck => deck.name === newCard.deck);
+  findDeck?.cards.push(newCard) ?? addDeck(newCard);
+
+  localStorage.setItem('decks', JSON.stringify(state.decks));
+};
+
 // export const loadCard = (aun no )

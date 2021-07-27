@@ -15,15 +15,16 @@ const controlDeckResults = function () {
   //renderiza los resultados de decks predefinida (ponele)
   deckResultsView.render(model.state.decks);
   // deckResultsView.update();
+  deckResultsView.handlerHover();
 };
 
 const controlAddCard = function (newCard) {
   //se añade la carta
-  model.uploadCard(newCard);
+  model.addCard(newCard);
   console.log('añadido');
 
   //se vuelve a renderizar la data
-  deckResultsView.render(model.state.decks);
+  controlDeckResults();
 
   //mostrar mensaje de exito
   addCardView.renderMessage();
@@ -31,10 +32,11 @@ const controlAddCard = function (newCard) {
   /* setTimeout(function () {
     addCardView.toggleWindow();
   }, TIMEOUT_SEC * 1000); */
+  //ponerle el hover a las cartas
 };
 //inicializador de todas las funciones
 const init = function () {
-  //deckResultsView.addHandlerRender(controlDeckResults);
-  //addCardView.addHandlerUpload(controlAddCard);
+  deckResultsView.addHandlerRender(controlDeckResults);
+  addCardView.addHandlerUpload(controlAddCard);
 };
 init();

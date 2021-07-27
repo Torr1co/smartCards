@@ -4,6 +4,7 @@ import View from './view';
 class DeckResultsView extends View {
   _parentElement = document.querySelector('.results');
   _rightCorner;
+  _cards;
 
   _generateMarkup() {
     // console.log(Math.ceil(this._data.length));
@@ -15,7 +16,7 @@ class DeckResultsView extends View {
     return `<li class="deck">
           
           <i class="ion-ios-folder icon-small"></i>
-          <div class="deck-text">
+          <div class="deck__text">
             <h4>${deck.name}</h4>
             <p>${deck.description}</p>
           </div>
@@ -41,7 +42,7 @@ class DeckResultsView extends View {
     if (i == this._rightCorner)
       return `
     <li class="card corner-right">
-          <i class="ion-ios-close icon-small"></i>
+          <i class="ion-ios-bookmarks icon-small"></i>
           <p>${card.front}</p>
         </li>`;
     else if (i == this._rightCorner - 3)
@@ -67,6 +68,29 @@ class DeckResultsView extends View {
   }
   addHandlerRender(handler) {
     window.addEventListener('load', handler);
+  }
+
+  _handleHover(e) {
+    console.log(e.target);
+    if (
+      e.target.classList.contains('card') ||
+      e.target.parentElement.classList.contains('card')
+    ) {
+      const deleteCard = e.target.closest('.card');
+      const siblings = deleteCard.closest('.cards').querySelectorAll('.card');
+
+      deleteCard.firstElementChild.classList.toggle('ion-ios-close');
+      siblings.forEach(el => {
+        if (el !== deleteCard) el.style.opacity = this;
+      });
+    }
+  }
+
+  handlerHover() {
+    this._cards = document.querySelector('.cards');
+
+    this._cards.addEventListener('mouseover', this._handleHover.bind(0.5));
+    this._cards.addEventListener('mouseout', this._handleHover.bind(1));
   }
 }
 
