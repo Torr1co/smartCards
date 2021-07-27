@@ -74,24 +74,27 @@
     <!-- DECKS -->
     <section class="section-decks row">
       <ul class="results">
-        <!-- <li class="deck deck-active">
+         <li class="deck">
+          
           <i class="ion-ios-folder icon-small"></i>
-          <div class="deck-text">
+          <div class="deck__text">
             <h4>Historia</h4>
             <p>some info about deck 1</p>
           </div>
-          <div class="progress lack">
-            <div class="progress__fill-lack"></div>
-            <span class="progress__text"></span>
+          <span>
+            <div class="progress lack">
+              <div class="progress__fill-lack"></div>
+              <span class="progress__text"></span>
+            </div>
+            <div class="progress track">
+              <div class="progress__fill-track"></div>
+              <span class="progress__text"></span>
+            </div>
           </div>
-          <div class="progress track">
-            <div class="progress__fill-track"></div>
-            <span class="progress__text"></span>
-            <p>30</p>
-          </div>
+          </span>
 
           <ul class="cards">
-            <li class="card corner-left">
+            <li class="card">
               <i class="ion-ios-bookmarks icon-small"></i>
               <p>Card1</p>
             </li>
@@ -103,47 +106,37 @@
               <i class="ion-ios-close icon-small"></i>
               <p>Card3</p>
             </li>
-            <li class="card corner-right">
-              <i class="ion-ios-bookmarks icon-small"></i>
+            <li class="card">
+              <i class="ion-ios-close icon-small"></i>
               <p>Card4</p>
             </li>
-          </ul>
+            <li class="card corner-left">
+              <i class="ion-ios-bookmarks icon-small"></i>
+              <p>Card5</p>
+            </li>
+          </ul> 
         </li>
-
         <li class="deck">
-          <i class="ion-ios-folder icon-small icon-decks"></i>
-          <div class="deck-text">
-            <h4>Matematica</h4>
-            <p>some info about deck 2</p>
-          </div>
-          <div class="progress lack">
-            <div class="progress__fill-lack"></div>
-            <span class="progress__text"></span>
-          </div>
-          <div class="progress track">
-            <div class="progress__fill-track"></div>
-            <span class="progress__text"></span>
-            <p>30</p>
-          </div>
-        </li>
-        <li class="deck deck-active">
+          
           <i class="ion-ios-folder icon-small"></i>
-          <div class="deck-text">
+          <div class="deck__text">
             <h4>Historia</h4>
             <p>some info about deck 1</p>
           </div>
-          <div class="progress lack">
-            <div class="progress__fill-lack"></div>
-            <span class="progress__text"></span>
+          <span>
+            <div class="progress lack">
+              <div class="progress__fill-lack"></div>
+              <span class="progress__text"></span>
+            </div>
+            <div class="progress track">
+              <div class="progress__fill-track"></div>
+              <span class="progress__text"></span>
+            </div>
           </div>
-          <div class="progress track">
-            <div class="progress__fill-track"></div>
-            <span class="progress__text"></span>
-            <p>30</p>
-          </div>
+          </span>
 
           <ul class="cards">
-            <li class="card corner-left">
+            <li class="card">
               <i class="ion-ios-bookmarks icon-small"></i>
               <p>Card1</p>
             </li>
@@ -155,12 +148,35 @@
               <i class="ion-ios-close icon-small"></i>
               <p>Card3</p>
             </li>
-            <li class="card corner-right">
-              <i class="ion-ios-bookmarks icon-small"></i>
+            <li class="card">
+              <i class="ion-ios-close icon-small"></i>
               <p>Card4</p>
             </li>
-          </ul>
-        </li> -->
+            <li class="card corner-left">
+              <i class="ion-ios-bookmarks icon-small"></i>
+              <p>Card5</p>
+            </li>
+          </ul> 
+        </li>
+        <li class="deck">
+          
+          <i class="ion-ios-folder icon-small"></i>
+          <div class="deck__text">
+            <h4>Historia</h4>
+            <p>some info about deck 1</p>
+          </div>
+          <span>
+            <div class="progress lack">
+              <div class="progress__fill-lack"></div>
+              <span class="progress__text"></span>
+            </div>
+            <div class="progress track">
+              <div class="progress__fill-track"></div>
+              <span class="progress__text"></span>
+            </div>
+          </div>
+          </span>
+        </li> 
       </ul>
     </section>
 
@@ -175,59 +191,101 @@
       </div>
     </section>
 
-    <!-- AÑADIR CARTA  -->
+    <!-- FORMS -->
+    <div class="overlay hidden"></div>
+
+    <!-- AÑADIR CARTA (BOTON)  -->
     <span class="btn--add-card">
       <i class="ion-ios-plus icon-small"></i>
     </span>
-
-    <!-- FORM -->
-    <div class="overlay hidden"></div>
+    <!-- FORM CARTA -->
     <div class="add-card-window hidden">
-      <button class="btn--close-modal"></button>
+      <button class="btn--close-modal">&times;</button>
       <form class="upload">
-        <h3>Carta</h3>
+        <!-- <h3>Carta</h3>
         <label>Front </label>
         <input
-          value="titulo de la carta..."
+          placeholder="titulo de la carta..."
           required
           type="text"
           name="front"
         />
         <label>Back </label>
         <input
-          value="Informacion a recordar.."
+          placeholder="Informacion a recordar.."
           required
           type="text"
           name="back"
         />
-        <label>Customization </label>
+        <label>Customización </label>
         <input
           autocomplete="off"
           id="input_custom"
           required
           placeholder="mazo"
-          list="mazos"
+          list="decks"
+          type="text"
+          name="deck"
         />
-        <datalist id="mazos">
+        <datalist id="decks">
           <option value="cadp"></option>
           <option value="oc"></option>
           <option value="matematica"></option>
         </datalist>
 
-        <input id="input_custom_right" placeholder="tema" list="tema" />
-        <datalist id="tema">
+        <input
+          id="input_custom_right"
+          placeholder="tema"
+          list="themes"
+          type="text"
+          name="theme"
+        />
+        <datalist id="themes">
           <option value="azul"></option>
           <option value="rojo"></option>
           <option value="verde"></option>
         </datalist>
 
-        <input type="submit" value="Confirm" id="input_submit" />
-        <input type="cancel" value="Cancel" id="input_cancel" />
-        <!--       <label>front: </label>
-        <input value="front" required type="text" name="front" />
-        <label>front: </label>
-        <input value="front" required type="text" name="front" /> -->
+        <button class="btn btn--upload">
+          <svg>
+            <use href="src/img/icons.svg#icon-upload-cloud"></use>
+          </svg>
+          <span>Upload</span>
+        </button> -->
       </form>
     </div>
+    <!-- FOOTER -->
+    <!-- <footer class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">About</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Ios App</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Android App</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Terms of Use</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Privacy Policy</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Blog</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Contact Us</a>
+        </li>
+        
+      </ul>
+      <img src="src/img/icon.png" alt="Logo" class="footer__logo" />
+      <p class="footer__copyright">
+        &copy; Copyright by
+        <a class="footer__link twitter-link" target="_blank" href="#">IntelliCards</a
+        >. Created by ${company_name}
+      </p>
+    </footer> -->
   </body>
 </html>

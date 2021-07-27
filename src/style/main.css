@@ -61,12 +61,12 @@ ul {
 .spinner {
   margin: 5rem auto;
   text-align: center;
+  animation: rotate 2s infinite linear;
 }
 svg {
   height: 6rem;
   width: 6rem;
   fill: var(--clr-prim);
-  animation: rotate 2s infinite linear;
 }
 @keyframes rotate {
   0% {
@@ -76,6 +76,29 @@ svg {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.message,
+.error {
+  max-width: 20rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+
+  display: flex;
+}
+.message svg,
+.error svg {
+  height: 4rem;
+  width: 4rem;
+  fill: var(--clr-prim);
+  transform: translateY(-0.3rem);
+}
+.message p,
+.error p {
+  margin-left: 1rem;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  font-weight: 600;
 }
 
 .hidden {
@@ -109,12 +132,11 @@ section {
 .track {
   background-color: var(--clr-ter-opacity);
   top: 50%;
-  transform: translateY(-50%);
 }
 .lack {
   background-color: var(--clr-sec-opacity);
   top: 35%;
-  transform: translateY(-50%);
+  margin-bottom: 10px;
 }
 
 .progress__fill-track {
@@ -127,7 +149,49 @@ section {
   width: 20%;
   height: 100%;
 }
+/* -------------------------------- */
+/*              Buttons             */
+/* -------------------------------- */
+.btn {
+  background-color: var(--clr-prim);
+  border-radius: 10rem;
+  border: none;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.btn:focus {
+  outline: none;
+}
+.btn > *:first-child {
+  margin-right: 1rem;
+}
+.btn {
+  padding: 0.2rem 1rem;
+  font-weight: 600;
+}
+.btn svg {
+  height: 2.25rem;
+  width: 2.25rem;
+  fill: white;
+}
+.btn--upload {
+  margin-left: 30%;
+}
 
+.btn--close-modal {
+  cursor: pointer;
+  border: none;
+  float: right;
+  font-size: 1.5rem;
+  background-color: white;
+}
 /* -------------------------------- */
 /*           Paragraphs             */
 /* -------------------------------- */
@@ -234,6 +298,7 @@ section {
 /* -------------------------------- */
 /*               decks              */
 /* -------------------------------- */
+
 .section-decks {
   background-size: cover;
   background-position: center;
@@ -244,58 +309,54 @@ section {
 }
 .deck {
   margin-top: 30px;
-  height: 100px;
   width: 70%;
-  background-color: #2a9d8f;
+  overflow: hidden;
+  background-color: var(--clr-prim);
   border-radius: 30px;
-  padding-left: 60px;
   color: white;
 }
 
 .deck i,
-.deck-text {
+.deck span,
+.deck__text,
+.deck ul {
   float: left;
 }
-.deck i {
+.deck > i {
   z-index: 0;
-  position: relative;
-  top: 15px;
-  margin-right: 30px;
+  padding: 20px 30px 20px 60px;
   font-size: 300%;
   color: var(--clr-prim-darker);
 }
-.deck-text {
-  padding-top: 25px;
-  color: white;
-  margin-right: 30px;
+.deck span {
+  padding-top: 40px;
 }
-.deck-active {
-  margin-bottom: 130px;
-  border-radius: 30px 30px 0px 0px;
+
+.deck__text {
+  padding-top: 30px;
+  padding-right: 40px;
 }
+.deck ul {
+  width: 100%;
+}
+
 /* -------------------------------- */
 /*               cards              */
 /* -------------------------------- */
+
 .cards {
-  margin-top: 80px;
-  margin-left: -60px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 0px 0px 30px 30px;
   background-color: var(--clr-prim-darker);
-  width: calc(100% + 60px);
-  list-style: none;
 }
 .card {
-  font-weight: 500;
   color: white;
-  padding-left: 5.5%;
   height: 100px;
   background-color: var(--clr-prim-darker);
   width: 25%;
   float: left;
   cursor: pointer;
   border: 1px solid var(--clr-prim);
+  padding-left: 60px;
+  padding-top: 10px;
   /*  border-style: solid;
   border-width: 2px;
   border-color: var(--clr-prim); */
@@ -306,27 +367,26 @@ section {
 .corner-right {
   border-bottom-right-radius: 30px;
 }
-.card p {
-  padding-left: 3%;
-  position: absolute;
-  top: 45%;
-  transform: translateY(-50%);
-}
+
 .card i {
-  position: inherit;
   color: var(--clr-prim);
   font-size: 80px;
   transform: rotate(-45deg);
   transition: transform 0.4s;
 }
+
 .card:hover i {
-  position: absolute;
-  top: -6px;
-  z-index: 0;
-  font-size: 100px;
   transform: rotate(0deg);
-  padding-bottom: 10px;
+  transform: scale(1.25, 1.25);
 }
+
+.card p {
+  position: relative;
+  padding-top: 25px;
+  text-align: center;
+  right: 70px;
+}
+
 /* -------------------------------- */
 /*           add cards              */
 /* -------------------------------- */
@@ -345,9 +405,10 @@ section {
   position: fixed;
   bottom: 55px;
   right: 55px;
+  transition: transform 0.2s;
 }
 .btn--add-card i:hover {
-  font-size: 200%;
+  transform: scale(1.25, 1.25);
 }
 .overlay {
   position: fixed;
@@ -379,6 +440,7 @@ section {
   margin-bottom: 3rem;
   margin-left: auto;
   text-align: center;
+  margin-top: 20px;
 }
 
 .upload label {
@@ -449,4 +511,38 @@ section {
 #option-good,
 #option-normal {
   color: white;
+}
+/* FOOTER */
+.footer {
+  padding: 5rem 1.5rem;
+  background-color: #37383d;
+  font-size: 0.8rem;
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.footer__item {
+  margin-right: 2rem;
+}
+
+.footer__link {
+  color: #eee;
+  text-decoration: none;
+}
+
+.footer__logo {
+  height: 2.5rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2.5rem;
+}
+
+.footer__copyright {
+  color: #aaa;
+  text-align: center;
 }
