@@ -71,26 +71,23 @@ class DeckResultsView extends View {
   }
 
   _handleHover(e) {
-    console.log(e.target);
-    if (
-      e.target.classList.contains('card') ||
-      e.target.parentElement.classList.contains('card')
-    ) {
-      const deleteCard = e.target.closest('.card');
-      const siblings = deleteCard.closest('.cards').querySelectorAll('.card');
+    const deleteCard = e.target.closest('.card');
+    if (!deleteCard) return;
+    const siblings = deleteCard.closest('.cards').querySelectorAll('.card');
 
-      deleteCard.firstElementChild.classList.toggle('ion-ios-close');
-      siblings.forEach(el => {
-        if (el !== deleteCard) el.style.opacity = this;
-      });
-    }
+    deleteCard.firstElementChild.classList.toggle('ion-ios-close');
+    siblings.forEach(el => {
+      if (el !== deleteCard) el.style.opacity = this;
+    });
   }
 
   handlerHover() {
-    this._cards = document.querySelector('.cards');
+    this._cards = document.querySelectorAll('.cards');
 
-    this._cards.addEventListener('mouseover', this._handleHover.bind(0.5));
-    this._cards.addEventListener('mouseout', this._handleHover.bind(1));
+    this._cards.forEach(c => {
+      c.addEventListener('mouseover', this._handleHover.bind(0.5));
+      c.addEventListener('mouseout', this._handleHover.bind(1));
+    });
   }
 }
 

@@ -70,6 +70,9 @@ const initDecks = function () {
 };
 initDecks();
 
+/* export const deleteCard = function(card{
+  
+}) */
 export const addCard = function (newCard) {
   const findDeck = state.decks.find(deck => deck.name === newCard.deck);
   findDeck?.cards.push(newCard) ?? addDeck(newCard);
