@@ -1,12 +1,11 @@
 import * as model from './model.js';
 import deckResultsView from './Views/deckResultsView.js';
 import addCardView from './Views/addCardView.js';
-import config from './config.js';
+import  { TIMEOUT_SEC } from './config.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import icons from 'url:../img/icons.svg';
-import { TIMEOUT_SEC } from '../../../forkify/src/js/config.js';
 
 const deckContainer = document.querySelector('.results');
 
