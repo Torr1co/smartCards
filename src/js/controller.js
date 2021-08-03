@@ -1,7 +1,7 @@
 import * as model from './model.js';
 import deckResultsView from './Views/deckResultsView.js';
 import addCardView from './Views/addCardView.js';
-import { TIMEOUT_SEC } from './config.js';
+/* import { TIMEOUT_SEC } from './config.js'; */
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
