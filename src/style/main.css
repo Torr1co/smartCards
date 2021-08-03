@@ -83,7 +83,8 @@ svg {
   max-width: 20rem;
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
-
+  background-color: white;
+  border-radius: 30px;
   display: flex;
 }
 .message svg,
@@ -102,7 +103,7 @@ svg {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
   opacity: 0;
 }
 .row {
@@ -122,7 +123,7 @@ section {
   padding: 1%;
 }
 .progress {
-  width: 300px;
+  width: 250px;
   height: 10px;
 
   border-radius: 5px;
@@ -303,7 +304,7 @@ section {
   background-size: cover;
   background-position: center;
   /* 100 porciento del view port */
-  height: 100vh;
+  min-height: 100vh;
   background-attachment: fixed;
   /* con esto la imagen queda clavada */
 }
@@ -340,23 +341,22 @@ section {
   width: 100%;
 }
 .deck__play {
+  float: left;
   padding: 0;
-  margin: 0;
+  margin-top: 20px;
+  margin-left: 40px;
   font-size: xx-large;
   background-color: white;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 65px;
+  width: 65px;
   cursor: pointer;
   color: var(--clr-prim);
 }
 .deck__play i {
-  bottom: 55px;
-  right: 55px;
-  transition: transform 0.2s;
-}
-.deck__play i:hover {
-  transform: scale(1.25, 1.25);
+  position: relative;
+  top: 5%;
+  left: 35%;
 }
 
 /* -------------------------------- */
@@ -400,10 +400,8 @@ section {
 }
 
 .card p {
-  position: relative;
-  padding-top: 25px;
-  text-align: center;
-  right: 70px;
+  position: absolute;
+  padding-top: 20px;
 }
 
 /* -------------------------------- */
@@ -453,7 +451,7 @@ section {
   z-index: 1000;
   transition: all 0.5s;
 }
-.upload h3 {
+.upload-card h3 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 3rem;
@@ -462,13 +460,13 @@ section {
   margin-top: 20px;
 }
 
-.upload label {
+.upload-card label {
   font-size: 1rem;
   font-weight: 700;
   display: block;
   margin-bottom: 16px;
 }
-.upload input {
+.upload-card input {
   margin-bottom: 22px;
   font-weight: 100;
   border: 2px solid #cbcbcb;
@@ -494,9 +492,17 @@ section {
   border-radius: 50px;
 }
 
-/* PRACTICE */
+/* -------------------------------- */
+/*            PRACTICE              */
+/* -------------------------------- */
 .section-practice {
   padding: 0;
+  height: 100vh;
+}
+.section-practice > p {
+  text-align: center;
+  color: white;
+  transform: translateY(40vh);
 }
 .practice-options {
   background-color: white;
@@ -512,30 +518,71 @@ section {
   height: 10vh;
   text-align: center;
   padding-top: 3vh;
-}
-.practice-options p {
   color: #1b655c;
   font-weight: 500;
 }
-#option-bad {
+.practice-options button {
+  cursor: pointer;
+  color: white;
+  float: left;
+  width: 60%;
+  height: 10vh;
+  text-align: center;
+  font-weight: 500;
+  border: none;
+}
+.option-bad {
   background-color: #e76f51;
 }
-#option-normal {
+.option-normal,
+.practice-options button {
   background-color: #868686;
 }
-#option-good {
+.option-good {
   background-color: #177c70;
 }
-#option-bad,
-#option-good,
-#option-normal {
+.option-bad,
+.option-good,
+.option-normal {
+  cursor: pointer;
   color: white;
+  float: left;
+  width: 20%;
+  height: 10vh;
+  text-align: center;
+  padding-top: 3vh;
 }
-/* FOOTER */
+
+input:checked + label {
+  border: 2px solid white;
+}
+
+.upload-progress input {
+  appearance: none;
+  display: none;
+}
+.section-practice span,
+.practice__continue {
+  display: block;
+  position: fixed;
+  top: 60px;
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 10px 30px;
+  background-color: white;
+  color: var(--clr-prim);
+  margin-left: 60px;
+  cursor: pointer;
+  border: none;
+}
+/* -------------------------------- */
+/*              FOOTER              */
+/* -------------------------------- */
 .footer {
   padding: 5rem 1.5rem;
   background-color: #37383d;
   font-size: 0.8rem;
+  display: block;
 }
 
 .footer__nav {

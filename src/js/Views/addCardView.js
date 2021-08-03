@@ -2,7 +2,7 @@ import icons from 'url:../../img/icons.svg';
 import View from './view';
 
 class addCardView extends View {
-  _parentElement = document.querySelector('.upload');
+  _parentElement = document.querySelector('.upload-card');
   _message = 'la carta se cargó exitosamente';
 
   _window = document.querySelector('.add-card-window');

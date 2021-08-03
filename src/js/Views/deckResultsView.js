@@ -5,15 +5,16 @@ class DeckResultsView extends View {
   _parentElement = document.querySelector('.results');
   _rightCorner;
   _cards;
+  _errorMessage = 'No has agragado ninguna carta';
 
   _generateMarkup() {
     // console.log(Math.ceil(this._data.length));
     return `${this._data.map(this._generateMarkupDeck.bind(this)).join('')}`;
   }
-  _generateMarkupDeck(deck) {
+  _generateMarkupDeck(deck, i) {
     this._rightCorner = Math.ceil(deck.cards.length / 4) * 4 - 1;
 
-    return `<li class="deck">
+    return `<li class="deck" data-deckIndex="${i}">
           
           <i class="ion-ios-folder icon-small"></i>
           <div class="deck__text">
@@ -31,6 +32,9 @@ class DeckResultsView extends View {
             </div>
           </div>
           </span>
+          <div class="deck__play" id="play-deck--1">
+            <i class="ion-ios-play icon-small"></i>
+          </div>
     
       <ul class="cards">
         ${deck.cards.map(this._generateMarkupCard.bind(this)).join('')}        
@@ -41,17 +45,17 @@ class DeckResultsView extends View {
   _generateMarkupCard(card, i) {
     if (i == this._rightCorner)
       return `
-    <li class="card corner-right">
+    <li class="card corner-right" data-cardIndex="${i}">
           <i class="ion-ios-bookmarks icon-small"></i>
           <p>${card.front}</p>
         </li>`;
     else if (i == this._rightCorner - 3)
-      return `<li class="card corner-left">
+      return `<li class="card corner-left" data-cardIndex="${i}">
        <i class="ion-ios-bookmarks icon-small"></i>
        <p>${card.front}</p>
      </li>`;
     else
-      return `<li class="card">
+      return `<li class="card" data-cardIndex="${i}">
     <i class="ion-ios-bookmarks icon-small"></i>
     <p>${card.front}</p>
   </li>`;

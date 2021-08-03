@@ -24,7 +24,7 @@
   </head>
   <body>
     <!-- NAVEGADOR -->
-    <header class="">
+    <header>
       <nav class="main-nav">
         <p class="section-days">dias activos: 5</p>
         <div class="row-small">
@@ -74,6 +74,7 @@
     <!-- DECKS -->
     <section class="section-decks row">
       <ul class="results">
+        <!-- el hidden va abajo -->
         <!-- <li class="deck">
           
           <i class="ion-ios-folder icon-small"></i>
@@ -92,7 +93,7 @@
             </div>
           </div>
           </span>
-          <div class="deck__play" id="play-Historia">
+          <div class="deck__play" id="play-deck--1">
             <i class="ion-ios-play icon-small"></i>
           </div>
           <ul class="cards">
@@ -119,12 +120,12 @@
           </ul> 
           
         </li>
-        <li class="deck">
-          
+
+        <li class="deck">  
           <i class="ion-ios-folder icon-small"></i>
           <div class="deck__text">
             <h4>Historia</h4>
-            <p>some info about deck 1</p>
+            <p>some info about deck 2</p>
           </div>
           <span>
             <div class="progress lack">
@@ -137,7 +138,9 @@
             </div>
           </div>
           </span>
-
+          <div class="deck__play" id="play-deck--1">
+            <i class="ion-ios-play icon-small"></i>
+          </div>
           <ul class="cards">
             <li class="card">
               <i class="ion-ios-bookmarks icon-small"></i>
@@ -161,12 +164,12 @@
             </li>
           </ul> 
         </li>
+
         <li class="deck">
-          
           <i class="ion-ios-folder icon-small"></i>
           <div class="deck__text">
             <h4>Historia</h4>
-            <p>some info about deck 1</p>
+            <p>some info about deck 3</p>
           </div>
           <span>
             <div class="progress lack">
@@ -185,13 +188,43 @@
 
     <!-- SECCION DE PRACTICA -->
     <section class="section-practice hidden">
+      <!-- <p>inicializar Vector</p>
+      <span class="practice__close"><- Volver</span>
       <div class="practice-options">
         <p>Matematica</p>
-        <p id="option-bad">Mal</p>
-        <p id="option-normal">Normal</p>
-        <p id="option-good">Bien</p>
+        <button class="practice__answer hidden">Mostrar Respuest</button>
+        <form class="upload-progress">
+          <input
+            type="radio"
+            id="option__bad"
+            name="fav_language"
+            value="Mal"
+          />
+          <label class="option-bad" for="option__bad">Mal</label>
+          <input
+            type="radio"
+            id="option__normal"
+            name="fav_language"
+            value="Maomeno"
+          />
+          <label class="option-normal" for="option__normal">Maomeno</label>
+          <input
+            type="radio"
+            id="option__bien"
+            name="fav_language"
+            value="Bien"
+          />
+          <label class="option-good" for="option__bien">Bien</label>
+
+          <input
+            style="display: unset"
+            class="practice__continue"
+            type="submit"
+            value="Enviar datos"
+          />
+        </form>
         <p>35%</p>
-      </div>
+      </div> -->
     </section>
 
     <!-- FORMS -->
@@ -204,7 +237,7 @@
     <!-- FORM CARTA -->
     <div class="add-card-window hidden">
       <button class="btn--close-modal">&times;</button>
-      <form class="upload">
+      <form class="upload-card">
         <!-- <h3>Carta</h3>
         <label>Front </label>
         <input
@@ -258,7 +291,7 @@
       </form>
     </div>
     <!-- FOOTER -->
-    <!-- <footer class="footer">
+    <footer class="footer">
       <ul class="footer__nav">
         <li class="footer__item">
           <a class="footer__link" href="#">About</a>
@@ -281,14 +314,14 @@
         <li class="footer__item">
           <a class="footer__link" href="#">Contact Us</a>
         </li>
-        
       </ul>
       <img src="src/img/icon.png" alt="Logo" class="footer__logo" />
       <p class="footer__copyright">
         &copy; Copyright by
-        <a class="footer__link twitter-link" target="_blank" href="#">IntelliCards</a
+        <a class="footer__link twitter-link" target="_blank" href="#"
+          >IntelliCards</a
         >. Created by ${company_name}
       </p>
-    </footer> -->
+    </footer>
   </body>
 </html>
