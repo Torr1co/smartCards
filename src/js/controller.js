@@ -62,9 +62,14 @@ const controlplayDeck = function (deckName) {
   //se actualiza dependiendo del form
   // playDeckView.addHandlerUpload();
 };
+
+const controlAddCardForm = function () {
+  addCardView.render(model.state.decks.map(n => n.name));
+};
 //inicializador de todas las funciones
 const init = function () {
   deckResultsView.addHandlerRender(controlDeckResults);
   addCardView.addHandlerUpload(controlAddCard);
+  addCardView.addHandlerOpenForm(controlAddCardForm);
 };
 init();

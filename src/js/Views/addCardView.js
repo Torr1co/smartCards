@@ -12,8 +12,7 @@ class addCardView extends View {
 
   constructor() {
     super();
-    this._addHandlerShowWindow();
-    this._addHandlerHideWindow();
+    this._addHandlerWindow();
   }
 
   _showForm() {
@@ -29,13 +28,15 @@ class addCardView extends View {
     this._window.classList.toggle('hidden');
   }
 
-  _addHandlerHideWindow() {
+  _addHandlerWindow() {
     this._btnClose.addEventListener('click', this.toggleWindow.bind(this));
     this._overlay.addEventListener('click', this.toggleWindow.bind(this));
-  }
-  _addHandlerShowWindow() {
-    this._btnOpen.addEventListener('click', this._showForm.bind(this));
     this._btnOpen.addEventListener('click', this.toggleWindow.bind(this));
+  }
+  addHandlerOpenForm(handler) {
+    this._btnOpen.addEventListener('click', function () {
+      handler();
+    });
   }
   /**
    *
@@ -82,9 +83,7 @@ class addCardView extends View {
         name="deck"
       />
       <datalist id="decks">
-        <option value="cadp"></option>
-        <option value="oc"></option>
-        <option value="matematica"></option>
+        ${this._data.map(e => `<option value="${e}"></option>`)}
       </datalist>
 
       <input
@@ -95,9 +94,7 @@ class addCardView extends View {
         name="theme"
       />
       <datalist id="themes">
-        <option value="azul"></option>
-        <option value="rojo"></option>
-        <option value="verde"></option>
+        <option value="aun no hay :("></option>
       </datalist>
 
       <button class="btn btn--upload">
