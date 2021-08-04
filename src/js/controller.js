@@ -64,7 +64,10 @@ const controlplayDeck = function (deckName) {
 };
 
 const controlAddCardForm = function () {
-  addCardView.render(model.state.decks.map(n => n.name));
+  const deckNames = model.state.decks.length === 0 ? ['no has agregado ningun mazo'] : model.state.decks.map(n => n?.name)
+
+
+  addCardView.render(deckNames);
 };
 //inicializador de todas las funciones
 const init = function () {
