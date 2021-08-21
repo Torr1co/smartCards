@@ -110,7 +110,7 @@ export const state = {
     curPage: 0,
     data: [
       {
-        text: `<h3>Bienvenido a IntelliCards!</h3>
+        text: `<h2>Bienvenido a IntelliCards!</h2>
     <p>
       <strong>Intellicards</strong> es una fant&aacute;stica aplicación que
       te ayudar&aacute; a <strong>mejorar</strong> tu capacidad de
