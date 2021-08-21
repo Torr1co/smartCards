@@ -1,4 +1,3 @@
-import icons from 'url:../../img/icons.svg';
 import View from './view';
 
 class TutorialView extends View {
@@ -97,9 +96,7 @@ class TutorialView extends View {
       return `
       <button data-tuto="${curPage + 1}" class="btn tutorial__btn--next">
           <span>Siguiente</span>
-          <svg class="search__icon">
-            <use href="${icons}#icon-arrow-right"></use>
-          </svg>
+          <ion-icon name="arrow-forward" size="medium"></ion-icon>
         </button>`;
     }
 
@@ -107,17 +104,12 @@ class TutorialView extends View {
     else if (curPage === numPages && numPages > 1) {
       return `
       <button data-tuto="${curPage - 1}" class="btn tutorial__btn--prev">
-        <svg class="search__icon">
-            <use href="${icons}#icon-arrow-left"></use>
-        </svg>
+      <ion-icon name="arrow-back" size="medium"></ion-icon>
         <span>Atras</span>
       </button>
-      <button data-tuto="${
-        curPage + 1 - numPages
-      }" class="btn tutorial__btn--next">
+      <button data-tuto="${curPage - numPages}" class="btn tutorial__btn--next">
             <span>Finalizar</span>
-            <svg class="search__icon">
-            </svg>
+            <ion-icon name="checkmark"></ion-icon>
           </button>`;
     }
 
@@ -125,16 +117,12 @@ class TutorialView extends View {
     else {
       return `
       <button data-tuto="${curPage - 1}" class="btn tutorial__btn--prev">
-        <svg class="search__icon">
-            <use href="${icons}#icon-arrow-left"></use>
-        </svg>
+      <ion-icon name="arrow-back" size="medium"></ion-icon>
         <span>Atras</span>
       </button>
       <button data-tuto="${curPage + 1}" class="btn tutorial__btn--next">
             <span>Siguiente</span>
-            <svg class="search__icon">
-              <use href="${icons}#icon-arrow-right"></use>
-            </svg>
+            <ion-icon name="arrow-forward" size="medium"></ion-icon>
           </button>`;
     }
 

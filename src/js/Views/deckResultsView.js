@@ -1,4 +1,3 @@
-import icons from 'url:../../img/icons.svg';
 import View from './view';
 
 class DeckResultsView extends View {
@@ -16,7 +15,7 @@ class DeckResultsView extends View {
 
     return `<li class="deck" data-deckIndex="${i}">
           
-          <i class="ion-ios-folder icon-small"></i>
+          <ion-icon name="folder"></ion-icon>
           <div class="deck__text">
             <h4>${deck.name}</h4>
             <p>${deck.description}</p>
@@ -32,14 +31,13 @@ class DeckResultsView extends View {
             </div>
           </div>
           </span>
-          <div class="deck__play" id="play-deck--1">
-            <i class="ion-ios-play icon-small"></i>
-          </div>
+          <ion-icon name="play-circle" class="deck__play" style="color:white"></ion-icon>
     
       <ul class="cards">
         ${deck.cards.map(this._generateMarkupCard.bind(this)).join('')}        
       </ul>
     </li>`;
+    // acordarse de play-deck--1
   }
 
   _generateMarkupCard(card, i) {
@@ -47,7 +45,7 @@ class DeckResultsView extends View {
     if (i == this._rightCorner)
       return `
     <li class="card corner-right" data-cardIndex="${i}">
-          <i class="ion-ios-bookmarks icon-small"></i>
+          <ion-icon name="reader-outline"></ion-icon>
           <p>${
             card.front.length > MAXLENGHT
               ? card.front.slice(0, MAXLENGHT)
@@ -56,7 +54,7 @@ class DeckResultsView extends View {
         </li>`;
     else if (i == this._rightCorner - 3)
       return `<li class="card corner-left" data-cardIndex="${i}">
-       <i class="ion-ios-bookmarks icon-small"></i>
+       <ion-icon name="reader-outline"></ion-icon>
        <p>${
          card.front.length > MAXLENGHT
            ? card.front.slice(0, MAXLENGHT)
@@ -65,7 +63,7 @@ class DeckResultsView extends View {
      </li>`;
     else
       return `<li class="card" data-cardIndex="${i}">
-    <i class="ion-ios-bookmarks icon-small"></i>
+    <ion-icon name="reader-outline"></ion-icon>
     <p>${
       card.front.length > MAXLENGHT
         ? card.front.slice(0, MAXLENGHT)
@@ -92,7 +90,13 @@ class DeckResultsView extends View {
     if (!deleteCard) return;
     const siblings = deleteCard.closest('.cards').querySelectorAll('.card');
 
-    deleteCard.firstElementChild.classList.toggle('ion-ios-close');
+    //cambio de icono
+    if (deleteCard.firstElementChild.name == 'reader-outline')
+      deleteCard.firstElementChild.name = 'close-circle-outline';
+    else {
+      deleteCard.firstElementChild.name = 'reader-outline';
+    }
+    //cambio opacidad
     siblings.forEach(el => {
       if (el !== deleteCard) el.style.opacity = this;
     });

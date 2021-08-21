@@ -1,4 +1,3 @@
-import icons from 'url:../../img/icons.svg';
 import View from './view';
 
 class playDeckView extends View {
@@ -19,7 +18,7 @@ class playDeckView extends View {
       <p>inicializar Vector</p>
       <span class="practice__close"><- Volver</span>
       <div class="practice-options">
-        <p>${this._deckName}</p>
+        <h3>${this._deckName}</h3>
         <button class="practice__answer hidden">Mostrar Respuesta</button>
         <form class="upload-progress">
           <input

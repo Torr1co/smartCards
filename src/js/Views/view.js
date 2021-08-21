@@ -1,5 +1,3 @@
-import icons from 'url:../../img/icons.svg';
-
 //todos estoso datos son importantes para todas las clases view
 
 export default class View {
@@ -70,9 +68,7 @@ export default class View {
   renderSpinner = function () {
     const markup = `
       <div class="spinner">
-        <svg>
-          <use href="${icons}#icon-loader"></use>
-        </svg>
+        <ion-icon name="refresh" size="medium"></ion-icon>
       </div>`;
     this._clear();
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
@@ -83,9 +79,7 @@ export default class View {
       <div class="error">
         <p>${err}</p>
         <div>
-        <svg>
-          <use href="${icons}#icon-alert-triangle"></use>
-        </svg>
+          <ion-icon name="alert-circle" size="medium"></ion-icon>
         </div>
       </div>`;
     this._clear();
@@ -97,9 +91,7 @@ export default class View {
       <div class="message">
         <p>${mess}</p>
         <div>
-          <svg>
-            <use href="${icons}#icon-smile"></use>
-          </svg>
+          <ion-icon name="happy-outline" size="medium"></ion-icon>
         </div>
       </div>`;
     this._clear();

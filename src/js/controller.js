@@ -8,8 +8,6 @@ import tutorialView from './Views/tutorialView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import icons from 'url:../img/icons.svg';
-import paginationView from '../../../../final/src/js/views/paginationView.js';
 
 const deckContainer = document.querySelector('.results');
 

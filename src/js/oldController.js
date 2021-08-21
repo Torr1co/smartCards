@@ -1,6 +1,5 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import icons from 'url:../img/icons.svg';
 
 const deckContainer = document.querySelector('.results');
 const btnAddCard = document.querySelector('.btn--add-card');

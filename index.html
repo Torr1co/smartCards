@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="Description"
+      content="IntelliCards te ayudará a estudiar mejor y aumentar tu productividad fusionando diferentes herramientas educacionales y juegos"
+    />
     <!-- vendors -->
+
     <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="vendors/css/grid.css" />
 
@@ -10,29 +15,40 @@
     <link rel="stylesheet" type="text/css" href="src/style/main.css" />
     <!-- <link rel="stylesheet" type="text/css" href="src/css/queries.css" /> -->
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendors/css/ionicons.min.css"
-    />
+    <link rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="vendors/css/animate.css" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="src/js/controller.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-0VKTE314D5"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-0VKTE314D5');
+    </script>
     <title>IntelliCards</title>
   </head>
   <body>
     <!-- NAVEGADOR -->
     <header>
       <nav class="main-nav">
-        <p class="section-days">dias activos: 🤨</p>
+        <p>dias activos: 🤨</p>
         <div class="row-small">
           <ul>
             <li id="section-active">
               <div class="circle">
                 <a href="#">
-                  <i class="ion-ios-bookmarks icon-small"></i>
+                  <ion-icon name="game-controller" size="medium"></ion-icon>
                 </a>
               </div>
             </li>
@@ -40,34 +56,34 @@
             <li>
               <div class="circle">
                 <a href="#">
-                  <i class="ion-ios-people icon-small"></i>
+                  <ion-icon name="people" size="medium"></ion-icon>
                 </a>
               </div>
             </li>
             <li>
               <div class="circle">
                 <a href="#">
-                  <i class="ion-ios-home icon-small"></i>
+                  <ion-icon name="home" size="medium"></ion-icon>
                 </a>
               </div>
             </li>
             <li>
               <div class="circle">
                 <a href="#">
-                  <i class="ion-ios-analytics icon-small"></i>
+                  <ion-icon name="bar-chart" size="medium"></ion-icon>
                 </a>
               </div>
             </li>
             <li>
               <div class="circle">
                 <a href="#">
-                  <i class="ion-ios-contact icon-small"></i>
+                  <ion-icon name="person" size="medium"></ion-icon>
                 </a>
               </div>
             </li>
           </ul>
         </div>
-        <p class="section-type">Práctica</p>
+        <h3>Práctica</h3>
       </nav>
     </header>
 
@@ -192,7 +208,7 @@
       <span class="practice__close"><- Volver</span>
       <div class="practice-options">
         <p>Matematica</p>
-        <button class="practice__answer hidden">Mostrar Respuest</button>
+        <button class="practice__answer hidden">Mostrar Respuesta</button>
         <form class="upload-progress">
           <input
             type="radio"
@@ -230,9 +246,9 @@
     <!-- Extras -->
 
     <!-- AÑADIR CARTA (BOTON)  -->
-    <span class="btn--add-card">
-      <i class="ion-ios-plus icon-small"></i>
-    </span>
+
+    <ion-icon name="add-circle" class="btn--add-card" size="big"></ion-icon>
+
     <!-- FORM CARTA -->
     <div class="overlay hidden"></div>
     <div class="add-card-window hidden window">
@@ -392,5 +408,13 @@
         >. Created by ${company_name}
       </p>
     </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>

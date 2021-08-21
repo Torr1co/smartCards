@@ -1,4 +1,3 @@
-import icons from 'url:../../img/icons.svg';
 import View from './view';
 
 class addCardView extends View {
@@ -57,7 +56,7 @@ class addCardView extends View {
   }
   _generateMarkup() {
     return `
-      <h3>Carta</h3>
+      <h2>Carta</h2>
       <label>Frente </label>
       <input
         autocomplete="off"
@@ -101,10 +100,8 @@ class addCardView extends View {
       </datalist>
 
       <button class="btn btn--upload">
-        <svg>
-          <use href="src/img/icons.svg#icon-upload-cloud"></use>
-        </svg>
-        <span>Upload</span>
+        <ion-icon name="cloud-upload-outline"></ion-icon>
+        <span>Cargar</span>
       </button>`;
   }
 }

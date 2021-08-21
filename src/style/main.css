@@ -65,7 +65,7 @@ ul {
   z-index: 1000;
   transition: all 1s;
 }
-.window h3 {
+.window h2 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-left: auto;
@@ -79,11 +79,7 @@ ul {
   text-align: center;
   animation: rotate 2s infinite linear;
 }
-svg {
-  height: 6rem;
-  width: 6rem;
-  fill: var(--clr-prim);
-}
+
 @keyframes rotate {
   0% {
     transform: rotate(0);
@@ -103,11 +99,11 @@ svg {
   border-radius: 30px;
   display: flex;
 }
-.message svg,
-.error svg {
+.message ion-icon,
+.error ion-icon {
   height: 4rem;
   width: 4rem;
-  fill: var(--clr-prim);
+  color: var(--clr-prim);
   transform: translateY(-0.3rem);
 }
 .message p,
@@ -193,13 +189,13 @@ section {
   padding: 0.2rem 1rem;
   font-weight: 600;
 }
-.btn svg {
-  height: 2.25rem;
-  width: 2.25rem;
+.btn ion-icon {
+  height: 2rem;
+  width: 2rem;
   fill: white;
 }
 .btn--upload {
-  margin-left: 30%;
+  margin-left: 35%;
 }
 
 .btn--close-modal,
@@ -226,21 +222,20 @@ section {
 /* -------------------------------- */
 /*             Header             */
 /* -------------------------------- */
-.section-type {
+nav > p,
+nav > h3 {
   font-size: 90%;
   font-weight: 500;
-  float: right;
   color: white;
   margin-top: 8px;
   margin-right: 30px;
 }
-.section-days {
-  font-size: 90%;
-  font-weight: 500;
+nav > p {
   float: left;
-  color: white;
-  margin-top: 8px;
   margin-left: 30px;
+}
+nav > h3 {
+  float: right;
 }
 .main-nav {
   background-color: var(--clr-prim-darker);
@@ -272,7 +267,7 @@ section {
 .main-nav li a:hover,
 .main-nav li a:active,
 #section-active a {
-  font-size: 120%;
+  font-size: 130%;
   color: #fff;
 }
 /* .main-nav li p {
@@ -287,7 +282,6 @@ section {
   height: 60px;
 }
 .circle {
-  padding-left: 8px;
   background-color: var(--clr-prim-darker);
   height: 10px;
   width: 90px;
@@ -298,19 +292,11 @@ section {
 /*               Icons              */
 /* -------------------------------- */
 .icon-big {
-  font-size: 350%;
-  display: block;
-  color: white;
-  /* text-align: center; */
+  font-size: 80px;
 }
 
-.icon-small {
-  display: inline-block;
-  /* width: 30px; */
-  text-align: center;
-  /* color: #ccc; */ /* var(--clr-prim); */
-  font-size: 190%;
-  margin-right: 10px;
+.icon-medium {
+  font-size: 165%;
 }
 
 /* -------------------------------- */
@@ -334,15 +320,15 @@ section {
   color: white;
 }
 
-.deck i,
+.deck ion-icon,
 .deck span,
 .deck__text,
 .deck ul {
   float: left;
 }
-.deck > i {
+.deck > ion-icon {
   z-index: 0;
-  padding: 20px 30px 20px 60px;
+  padding: 20px 30px 20px 50px;
   font-size: 300%;
   color: var(--clr-prim-darker);
 }
@@ -358,19 +344,9 @@ section {
   width: 100%;
 }
 .deck__play {
-  float: left;
-  padding: 0;
-  margin-top: 20px;
-  margin-left: 40px;
-  font-size: xx-large;
-  background-color: white;
-  border-radius: 50%;
-  height: 65px;
-  width: 65px;
   cursor: pointer;
-  color: var(--clr-prim);
 }
-.deck__play i {
+.deck__play ion-icon {
   position: relative;
   top: 5%;
   left: 35%;
@@ -404,14 +380,14 @@ section {
   border-bottom-right-radius: 30px;
 }
 
-.card i {
+.card ion-icon {
   color: var(--clr-prim);
   font-size: 80px;
   transform: rotate(-45deg);
   transition: transform 0.4s;
 }
 
-.card:hover i {
+.card:hover ion-icon {
   transform: rotate(0deg);
   transform: scale(1.25, 1.25);
 }
@@ -435,20 +411,12 @@ section {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  font-size: xx-large;
-  background-color: white;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
   cursor: pointer;
-}
-.btn--add-card i {
-  position: fixed;
-  bottom: 55px;
-  right: 55px;
+  color: white;
   transition: transform 0.2s;
 }
-.btn--add-card i:hover {
+
+.btn--add-card:hover {
   transform: scale(1.25, 1.25);
 }
 .overlay,
@@ -463,7 +431,7 @@ section {
   z-index: 100;
   transition: all 0.5s;
 }
-.upload-card h3 {
+.upload-card h2 {
   margin-bottom: 3rem;
 }
 .upload-card label {
@@ -519,7 +487,8 @@ section {
   z-index: 9;
   bottom: 30px;
 }
-.practice-options p {
+.practice-options p,
+.practice-options h3 {
   float: left;
   width: 20%;
   height: 10vh;
