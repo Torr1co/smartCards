@@ -5,7 +5,7 @@ class DeckResultsView extends View {
   _parentElement = document.querySelector('.results');
   _rightCorner;
   _cards;
-  _errorMessage = 'No has agragado ninguna carta';
+  _errorMessage = 'No has agregado ningún deck/carta';
 
   _generateMarkup() {
     // console.log(Math.ceil(this._data.length));
@@ -43,21 +43,34 @@ class DeckResultsView extends View {
   }
 
   _generateMarkupCard(card, i) {
+    const MAXLENGHT = 10;
     if (i == this._rightCorner)
       return `
     <li class="card corner-right" data-cardIndex="${i}">
           <i class="ion-ios-bookmarks icon-small"></i>
-          <p>${card.front}</p>
+          <p>${
+            card.front.length > MAXLENGHT
+              ? card.front.slice(0, MAXLENGHT)
+              : card.front
+          }</p>
         </li>`;
     else if (i == this._rightCorner - 3)
       return `<li class="card corner-left" data-cardIndex="${i}">
        <i class="ion-ios-bookmarks icon-small"></i>
-       <p>${card.front}</p>
+       <p>${
+         card.front.length > MAXLENGHT
+           ? card.front.slice(0, MAXLENGHT)
+           : card.front
+       }</p>
      </li>`;
     else
       return `<li class="card" data-cardIndex="${i}">
     <i class="ion-ios-bookmarks icon-small"></i>
-    <p>${card.front}</p>
+    <p>${
+      card.front.length > MAXLENGHT
+        ? card.front.slice(0, MAXLENGHT)
+        : card.front
+    }</p>
   </li>`;
 
     // <li class="card corner-left">

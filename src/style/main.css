@@ -33,7 +33,7 @@ body {
   color: #555;
   font-family: 'Lato', 'Arial', 'Helvetica';
   font-size: 20px;
-  font-weight: 300;
+  /* font-weight: 300; */
   text-rendering: optimizeLegibility;
   /* pa que no se pase */
   overflow-x: hidden;
@@ -56,6 +56,22 @@ ul {
 /* -------------------------------- */
 /*        Reusable components       */
 /* -------------------------------- */
+.window {
+  /* 30 width */
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  box-shadow: 0 2rem 3rem rgb(0 0 0 / 25%);
+  z-index: 1000;
+  transition: all 1s;
+}
+.window h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: auto;
+  text-align: center;
+  margin-top: 20px;
+}
 
 /* SPINNER */
 .spinner {
@@ -186,7 +202,8 @@ section {
   margin-left: 30%;
 }
 
-.btn--close-modal {
+.btn--close-modal,
+.btn--close-tutorial {
   cursor: pointer;
   border: none;
   float: right;
@@ -227,7 +244,7 @@ section {
 }
 .main-nav {
   background-color: var(--clr-prim-darker);
-  height: 10vh;
+  height: 60px;
   list-style: none;
   position: fixed;
   width: 100%;
@@ -407,6 +424,13 @@ section {
 /* -------------------------------- */
 /*           add cards              */
 /* -------------------------------- */
+.add-card-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+}
 .btn--add-card {
   position: fixed;
   bottom: 40px;
@@ -427,7 +451,8 @@ section {
 .btn--add-card i:hover {
   transform: scale(1.25, 1.25);
 }
-.overlay {
+.overlay,
+.tutoOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -438,28 +463,9 @@ section {
   z-index: 100;
   transition: all 0.5s;
 }
-.add-card-window {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30rem;
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 1rem 2rem;
-  box-shadow: 0 2rem 3rem rgb(0 0 0 / 25%);
-  z-index: 1000;
-  transition: all 0.5s;
-}
 .upload-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
   margin-bottom: 3rem;
-  margin-left: auto;
-  text-align: center;
-  margin-top: 20px;
 }
-
 .upload-card label {
   font-size: 1rem;
   font-weight: 700;
@@ -503,6 +509,7 @@ section {
   text-align: center;
   color: white;
   transform: translateY(40vh);
+  padding: 0 8rem;
 }
 .practice-options {
   background-color: white;
@@ -575,6 +582,36 @@ input:checked + label {
   cursor: pointer;
   border: none;
 }
+/* -------------------------------- */
+/*            Tutorial              */
+/* -------------------------------- */
+.section-tutorial {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+}
+.section-tutorial p {
+  padding: 2rem 0;
+}
+
+.tutorial__btn--prev {
+  float: left;
+  font-size: medium;
+}
+.tutorial__btn--next {
+  float: right;
+  font-size: medium;
+}
+.highlight {
+  position: absolute;
+  z-index: 1000;
+}
+.tutoOverlay {
+  backdrop-filter: none;
+}
+
 /* -------------------------------- */
 /*              FOOTER              */
 /* -------------------------------- */

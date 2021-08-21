@@ -3,6 +3,7 @@ import View from './view';
 
 class playDeckView extends View {
   _parentElement = document.querySelector('.section-practice');
+  _deckName;
   _answer;
   _continue;
   _upload;
@@ -18,8 +19,8 @@ class playDeckView extends View {
       <p>inicializar Vector</p>
       <span class="practice__close"><- Volver</span>
       <div class="practice-options">
-        <p>Matematica</p>
-        <button class="practice__answer hidden">Mostrar Respuest</button>
+        <p>${this._deckName}</p>
+        <button class="practice__answer hidden">Mostrar Respuesta</button>
         <form class="upload-progress">
           <input
             type="radio"
@@ -27,21 +28,21 @@ class playDeckView extends View {
             name="fav_language"
             value="Mal"
           />
-          <label class="option-bad" for="option__bad">Mal</label>
+          <label class="option-bad" for="option__bad">Maomeno</label>
           <input
             type="radio"
             id="option__normal"
             name="fav_language"
             value="Maomeno"
           />
-          <label class="option-normal" for="option__normal">Maomeno</label>
+          <label class="option-normal" for="option__normal">Bien</label>
           <input
             type="radio"
             id="option__bien"
             name="fav_language"
             value="Bien"
           />
-          <label class="option-good" for="option__bien">Bien</label>
+          <label class="option-good" for="option__bien">Perfecto</label>
 
           <input
             style="display: unset"
@@ -54,18 +55,13 @@ class playDeckView extends View {
       </div>`;
   }
   showCards(cards) {
-    console.log(cards);
-    console.log('es este');
     this._btnClose = document.querySelector('.practice__close');
     this._btnClose.addEventListener('click', this._toggleWindow.bind(this));
     this._toggleWindow();
     //to toggle cards
     this._answer = document.querySelector('.practice__answer');
-    console.log(this._answer);
     this._upload = document.querySelector('.upload-progress');
-    console.log(this._upload);
     this._continue = document.querySelector('.practice__continue');
-    console.log(this._upload);
 
     let i = 0;
     const cthis = this;
@@ -87,14 +83,14 @@ class playDeckView extends View {
 
   addHandlerStart(handler) {
     this._btnOpen = document.querySelectorAll('.deck__play');
-
+    const cthis = this;
     this._btnOpen.forEach(btn => {
       btn.addEventListener('click', function (e) {
         //se obtiene el nombre del deck
         const deckName =
           this.previousElementSibling.previousElementSibling.firstElementChild
             .textContent;
-
+        cthis._deckName = deckName;
         handler(deckName);
       });
     });

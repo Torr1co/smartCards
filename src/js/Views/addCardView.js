@@ -58,15 +58,17 @@ class addCardView extends View {
   _generateMarkup() {
     return `
       <h3>Carta</h3>
-      <label>Front </label>
+      <label>Frente </label>
       <input
+        autocomplete="off"
         placeholder="titulo de la carta..."
         required
         type="text"
         name="front"
       />
-      <label>Back </label>
+      <label>Dorso </label>
       <input
+        autocomplete="off"
         placeholder="Informacion a recordar.."
         required
         type="text"
@@ -80,6 +82,7 @@ class addCardView extends View {
         placeholder="mazo"
         list="decks"
         type="text"
+        maxlength="20"
         name="deck"
       />
       <datalist id="decks">

@@ -26,7 +26,7 @@
     <!-- NAVEGADOR -->
     <header>
       <nav class="main-nav">
-        <p class="section-days">dias activos: 5</p>
+        <p class="section-days">dias activos: 🤨</p>
         <div class="row-small">
           <ul>
             <li id="section-active">
@@ -67,7 +67,7 @@
             </li>
           </ul>
         </div>
-        <p class="section-type">aprender</p>
+        <p class="section-type">Práctica</p>
       </nav>
     </header>
 
@@ -227,15 +227,15 @@
       </div> -->
     </section>
 
-    <!-- FORMS -->
-    <div class="overlay hidden"></div>
+    <!-- Extras -->
 
     <!-- AÑADIR CARTA (BOTON)  -->
     <span class="btn--add-card">
       <i class="ion-ios-plus icon-small"></i>
     </span>
     <!-- FORM CARTA -->
-    <div class="add-card-window hidden">
+    <div class="overlay hidden"></div>
+    <div class="add-card-window hidden window">
       <button class="btn--close-modal">&times;</button>
       <form class="upload-card">
         <!-- <h3>Carta</h3>
@@ -290,15 +290,79 @@
         </button> -->
       </form>
     </div>
+
+    <!-- TUTORIAL -->
+    <div class="tutoOverlay hidden"></div>
+    <section class="section-tutorial window hidden">
+      <button class="btn--close-tutorial">&times;</button>
+      <div class="tutorial__text">
+        <h3>Bienvenido a IntelliCards!</h3>
+        <p>
+          <strong>Intellicards</strong> es una fant&aacute;stica aplicación que
+          te ayudar&aacute; a <strong>mejorar</strong> tu capacidad de
+          establecer y recordar conceptos🤓. Podrás mantener tus estudios al
+          d&iacute;a facilmente utilizando nuestras tecnicas de aprendizaje y
+          practica👩‍🎓👨‍🎓, <strong>compartir</strong> tus estudios con otras
+          personas para revisar errores y <strong>analizar</strong> tus
+          resultados en nuestra seccion de graficos📈
+        </p>
+        <!-- <p>
+        Actualmente solo disponemos de la seccion de practica pues la aplicación
+        se encuentra en alfa😨😬 pero pronto saldr&aacute;n nuevas
+        actualizaci&oacute;nes para que dispongan de todas nuestras
+        funci&oacute;nes so&ntilde;adas para la app
+        </p> -->
+        <!-- <p>
+          En la seccion de practica puedes comenzar aprendiendo con nuestro
+          juego de quizes🎯🎰. Dispones de <stong>mazos</stong> creados por ti
+          mismo para aprender, estos mazos contienen cartas en las que tendrás
+          que poner un frente y un dorso, el <strong>dorso</strong> debe ser la
+          información que quieras <strong>recordar</strong> y el
+          <strong>frente</strong> tiene que
+          <strong>activar tu memoria</strong> para el dorso, puede ser una
+          frase, palabra o pregunta😉. Puedes comenzar a jugar con el boton de
+          play
+        </p> -->
+        <!-- <p>
+          La sección de practica tiene distintos atajos sobre la sección de
+          organizar⚡. <br />Para <strong>eliminar</strong> cartas rapidamente
+          clickea sobre ellas en un mazo.<br />
+          También puedes <strong>agregar</strong> una carta rapida clickeando
+          sobre el + abajo a la derecha
+        </p> -->
+        <!-- <p>
+          Al <strong>agregar</strong> una carta se desplegará un formulario a
+          completar con la información del frente, el dorso y el mazo donde
+          querrás ubicarla, si el mazo que escribes no existe, se creará uno
+          nuevo con la carta incluida. <br />El tema aún no tiene función
+          incluida pero su objetivo es tener una mayor personalizacion en tus
+          cartas
+        </p> -->
+        <!-- <p>
+          Ahora vamos a jugar!🎮, esta practica es autodidácta, piensa en toda
+          la información que sabes sobre la palabra en pantalla🤔
+          <strong>(frente de carta )</strong>, una vez decidido de la respuesta
+          apretá <strong>mostrar respuesta</strong> abajo en gris.
+        </p> -->
+      </div>
+      <div class="tutorial__pagination">
+        <button data-tuto="1" class="btn tutorial__btn--next">
+          <span>Pagina 1</span>
+          <svg class="search__icon">
+            <use href="#icon-arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </section>
     <!-- FOOTER -->
     <footer class="footer">
       <ul class="footer__nav">
         <li class="footer__item">
           <a class="footer__link" href="#">About</a>
         </li>
-        <li class="footer__item">
+        <!--  <li class="footer__item">
           <a class="footer__link" href="#">Ios App</a>
-        </li>
+        </li> -->
         <li class="footer__item">
           <a class="footer__link" href="#">Android App</a>
         </li>
@@ -312,7 +376,12 @@
           <a class="footer__link" href="#">Blog</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link" href="#">Contact Us</a>
+          <a
+            class="footer__link"
+            href="https://www.instagram.com/fabriziotorrico/"
+            target="_blank"
+            >Contact Us</a
+          >
         </li>
       </ul>
       <img src="src/img/icon.png" alt="Logo" class="footer__logo" />
