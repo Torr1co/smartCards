@@ -247,37 +247,27 @@ nav > h3 {
   z-index: 9;
 }
 .main-nav li {
-  padding-left: 15px;
   text-align: center;
   /* color: transparent; */
   float: left;
   width: 20%;
-  transition: height 0.2s;
   list-style: none;
 }
 .main-nav li a:link,
 .main-nav li a:visited {
   color: #ccc;
   text-decoration: none;
-
   /* text-transform: uppercase; */
   /* transparent: not be visible until hover */
-  transition: font-size 0.2s;
 }
-.main-nav li a:hover,
-.main-nav li a:active,
-#section-active a {
-  font-size: 130%;
+.main-nav ion-icon:hover,
+.main-nav ion-icon:hover,
+#section-active ion-icon {
+  transition: transform 0.2s;
+  transform: scale(1.2);
   color: #fff;
 }
-/* .main-nav li p {
-  font-size: 80%;
-  font-weight: 400;
-  padding-left: 10px;
-  position: absolute;
-  color: var(--clr-prim-darker);
-} */
-.circle:hover,
+.main-nav .circle:hover,
 #section-active .circle {
   height: 60px;
 }
@@ -294,9 +284,11 @@ nav > h3 {
 .icon-big {
   font-size: 80px;
 }
-
 .icon-medium {
-  font-size: 165%;
+  font-size: 64px;
+}
+.icon-little {
+  font-size: 32px;
 }
 
 /* -------------------------------- */
@@ -329,7 +321,6 @@ nav > h3 {
 .deck > ion-icon {
   z-index: 0;
   padding: 20px 30px 20px 50px;
-  font-size: 300%;
   color: var(--clr-prim-darker);
 }
 .deck span {
@@ -368,7 +359,7 @@ nav > h3 {
   cursor: pointer;
   border: 1px solid var(--clr-prim);
   padding-left: 60px;
-  padding-top: 10px;
+  padding-top: 16px;
   /*  border-style: solid;
   border-width: 2px;
   border-color: var(--clr-prim); */
@@ -382,7 +373,6 @@ nav > h3 {
 
 .card ion-icon {
   color: var(--clr-prim);
-  font-size: 80px;
   transform: rotate(-45deg);
   transition: transform 0.4s;
 }

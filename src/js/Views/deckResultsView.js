@@ -15,7 +15,7 @@ class DeckResultsView extends View {
 
     return `<li class="deck" data-deckIndex="${i}">
           
-          <ion-icon name="folder"></ion-icon>
+          <ion-icon name="folder" size="medium"></ion-icon>
           <div class="deck__text">
             <h4>${deck.name}</h4>
             <p>${deck.description}</p>
@@ -31,7 +31,7 @@ class DeckResultsView extends View {
             </div>
           </div>
           </span>
-          <ion-icon name="play-circle" class="deck__play" style="color:white"></ion-icon>
+          <ion-icon name="play-circle" size="medium" class="deck__play" style="color:white"></ion-icon>
     
       <ul class="cards">
         ${deck.cards.map(this._generateMarkupCard.bind(this)).join('')}        
@@ -45,7 +45,7 @@ class DeckResultsView extends View {
     if (i == this._rightCorner)
       return `
     <li class="card corner-right" data-cardIndex="${i}">
-          <ion-icon name="reader-outline"></ion-icon>
+          <ion-icon name="reader-outline" size="medium"></ion-icon>
           <p>${
             card.front.length > MAXLENGHT
               ? card.front.slice(0, MAXLENGHT)
@@ -54,7 +54,7 @@ class DeckResultsView extends View {
         </li>`;
     else if (i == this._rightCorner - 3)
       return `<li class="card corner-left" data-cardIndex="${i}">
-       <ion-icon name="reader-outline"></ion-icon>
+       <ion-icon name="reader-outline" size="medium"></ion-icon>
        <p>${
          card.front.length > MAXLENGHT
            ? card.front.slice(0, MAXLENGHT)
@@ -63,7 +63,7 @@ class DeckResultsView extends View {
      </li>`;
     else
       return `<li class="card" data-cardIndex="${i}">
-    <ion-icon name="reader-outline"></ion-icon>
+    <ion-icon name="reader-outline" size="medium"></ion-icon>
     <p>${
       card.front.length > MAXLENGHT
         ? card.front.slice(0, MAXLENGHT)
