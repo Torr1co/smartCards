@@ -2,7 +2,7 @@ export const state = {
   decks: [
     {
       name: 'tutorial Quiz',
-      description: 'some info about deck 1',
+      description: 'info about the deck ',
       progressDeck: 0,
       progressDay: 0,
       cardIndex: 0,
@@ -231,7 +231,7 @@ export const getCards = function (deckName) {
 const addDeck = function (newCard) {
   state.decks.push({
     name: newCard.deck,
-    description: `some info about the deck`,
+    description: `info about the deck`,
     progress: 0,
     cards: [],
   });
