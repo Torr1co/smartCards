@@ -1,3 +1,3 @@
 # smart cards
 
-aplicacion de cartas para estudiar eficientemente
+https://intellicards.netlify.app/
